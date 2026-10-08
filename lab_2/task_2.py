@@ -23,3 +23,14 @@ changes('Первое изменение')
 print()
 original[0][1] = 3
 changes('Второе изменение')
+print()
+wrong_matrix = [[0] * 3] * 3
+wrong_matrix[0][0] = 1
+print(*wrong_matrix, sep='\n')
+print()
+correct_matrix = [[0] * 3 for _ in range(3)]
+print(*correct_matrix, sep='\n')
+
+print('Проверка:')
+print('Идентичны ли 1 и 3 строчки в wrong_matrix:', wrong_matrix[0] is wrong_matrix[2])
+print('Идентичны ли 1 и 3 строчки в correct_matrix:', correct_matrix[0] is correct_matrix[2])
