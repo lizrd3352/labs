@@ -14,3 +14,17 @@ print("После del alias:", sys.getrefcount(data))
 
 container.clear()
 print("После очистки контейнера:", sys.getrefcount(data))
+
+import weakref
+
+
+class Record:
+    pass
+
+
+record = Record()
+weak_record = weakref.ref(record)
+
+print(weak_record())
+del record
+print(weak_record())
