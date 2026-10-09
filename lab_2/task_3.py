@@ -28,3 +28,17 @@ weak_record = weakref.ref(record)
 print(weak_record())
 del record
 print(weak_record())
+print()
+
+print("Практическая задача")
+links = weakref.WeakValueDictionary()
+a = Record()
+b = Record()
+c = Record()
+links["a"] = a
+links["b"] = b
+links["c"] = c
+del c
+print(list(links))
+del b
+print(list(links))
